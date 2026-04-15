@@ -211,6 +211,9 @@ DeviceNetworkEvents
 **Outcome:** Portable TOR bundle extracted and staged locally.
 
 ---
+### Evidence Screenshot
+
+<img src="https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/images/tor-silent-install-details.png" alt="Silent TOR installer execution details in DeviceProcessEvents" width="500"/>
 
 # Chronological Event Timeline (Summary View)
 
