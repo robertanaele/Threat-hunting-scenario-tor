@@ -1,7 +1,3 @@
-Got it — the issue is that your content was wrapped with extra code fences, so GitHub would treat the whole thing as a code block instead of rendering it as Markdown.
-
-Copy and paste this directly into your `README.md`:
-
 # Threat-hunting-scenario-tor
 
 <img width="400" src="https://github.com/user-attachments/assets/44bac428-01bb-4fe9-9d85-96cba7698bee" alt="Tor Logo with the onion and a crosshair on it"/>
