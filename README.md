@@ -5,7 +5,7 @@
 
 # Threat Hunt Report: Unauthorized TOR Usage (win-client-01)
 
-- [Scenario Creation](https://github.com/joshmadakor0/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)
+- [Scenario Creation](https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/Threat-hunting-scenario-creation)
 
 ---
 
