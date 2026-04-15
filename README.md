@@ -1,3 +1,16 @@
+Absolutely — I added the screenshots into the sections where they fit best.
+
+Since GitHub README images should usually be stored in your repo, I’ll assume you place them in an `images` folder like this:
+
+- `images/tor-network-events-overview.png`
+- `images/tor-network-events-details.png`
+- `images/tor-browser-process-events-overview.png`
+- `images/tor-browser-process-details.png`
+- `images/tor-silent-install-details.png`
+
+Below is the full corrected GitHub-ready Markdown:
+
+```markdown
 # Threat-hunting-scenario-tor
 
 <img width="400" src="https://github.com/user-attachments/assets/44bac428-01bb-4fe9-9d85-96cba7698bee" alt="Tor Logo with the onion and a crosshair on it"/>
@@ -66,7 +79,6 @@ Searched for execution of:
 `tor-browser-windows-x86_64-portable-15.0.9.exe /S`
 
 ### Findings:
-
 - User **jameslee** executed the TOR installer in **silent mode**
 - Installation occurred with no visible UI or prompts
 - **Timestamp:** `2026-04-13T01:08:15Z`
@@ -80,6 +92,10 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, ActionType, FileName, ProcessCommandLine
 ```
 
+### Evidence Screenshot
+
+<img src="images/tor-silent-install-details.png" alt="Silent TOR installer execution details in DeviceProcessEvents" width="700"/>
+
 ---
 
 ## 3. Searched for TOR Browser Execution
@@ -87,7 +103,6 @@ DeviceProcessEvents
 Searched for process execution indicating TOR Browser launch activity.
 
 ### Findings:
-
 - TOR Browser was actively launched on:
 - **Timestamp:** `2026-04-12T21:14:05Z`
 - Processes observed:
@@ -95,8 +110,7 @@ Searched for process execution indicating TOR Browser launch activity.
   - `tor.exe`
 
 ### Interpretation:
-
-- Confirms TOR Browser was **successfully executed prior to installation event**
+- Confirms TOR Browser was successfully executed on the endpoint.
 
 ### Query Used:
 
@@ -108,6 +122,14 @@ DeviceProcessEvents
 | order by Timestamp desc
 ```
 
+### Evidence Screenshots
+
+#### TOR Browser Process Activity Overview
+<img src="images/tor-browser-process-events-overview.png" alt="TOR browser process activity overview in DeviceProcessEvents" width="900"/>
+
+#### TOR Browser Process Detail
+<img src="images/tor-browser-process-details.png" alt="TOR browser firefox process detail showing path and execution context" width="500"/>
+
 ---
 
 ## 4. Searched the `DeviceNetworkEvents` Table (TOR Network Traffic)
@@ -115,7 +137,6 @@ DeviceProcessEvents
 Searched for outbound traffic associated with TOR-related processes.
 
 ### Findings:
-
 - **Timestamp:** `2026-04-12T21:15:06Z`
 - **Remote IP:** `69.12.83.97`
 - **Remote Port:** `9001`
@@ -123,8 +144,7 @@ Searched for outbound traffic associated with TOR-related processes.
 - Additional encrypted traffic observed over port **443**
 
 ### Interpretation:
-
-- Confirms active participation in TOR network relay communication
+- Confirms active participation in TOR network relay communication.
 
 ### Query Used:
 
@@ -137,6 +157,14 @@ DeviceNetworkEvents
          InitiatingProcessFileName, RemoteIP, RemotePort, RemoteUrl
 | order by Timestamp desc
 ```
+
+### Evidence Screenshots
+
+#### TOR Network Connections Overview
+<img src="images/tor-network-events-overview.png" alt="TOR-related outbound network connections in DeviceNetworkEvents" width="900"/>
+
+#### TOR Network Connection Detail
+<img src="images/tor-network-events-details.png" alt="Detailed TOR network connection record showing remote IP 69.12.83.97 over port 9001" width="900"/>
 
 ---
 
@@ -178,7 +206,6 @@ tor-browser-windows-x86_64-portable-15.0.9.exe /S
 ```
 
 **Outcome:**
-
 - Silent installation performed
 - No user interaction or UI prompts observed
 
@@ -217,8 +244,28 @@ The user **jameslee** on endpoint **win-client-01** demonstrated confirmed TOR a
 - TOR usage was confirmed on endpoint **win-client-01**
 - Activity was escalated for review due to anonymization tool usage and silent installation behavior
 - Endpoint activity should be assessed for policy violation and potential unauthorized anonymized browsing
+```
 
-If you want, I can also give you:
-1. a **fully cleaned GitHub-ready version**
-2. a **more professional polished SOC report version**
-3. the same thing inside a single **copy button code block** without breaking Markdown rendering
+## What you need to do
+Put your screenshots in a folder named `images` inside the repo, and rename them exactly as:
+
+- `tor-network-events-overview.png`
+- `tor-network-events-details.png`
+- `tor-browser-process-events-overview.png`
+- `tor-browser-process-details.png`
+- `tor-silent-install-details.png`
+
+## Suggested mapping from your uploaded screenshots
+Based on what you sent:
+
+1. first image → `tor-network-events-overview.png`
+2. second image → `tor-network-events-details.png`
+3. third image → `tor-browser-process-events-overview.png`
+4. fourth image → `tor-browser-process-details.png`
+5. fifth image → `tor-silent-install-details.png`
+
+If you want, I can do one more step and give you:
+- a **fully polished final README**
+- with **better wording**
+- **cleaner headings**
+- and **centered images** for GitHub presentation.
