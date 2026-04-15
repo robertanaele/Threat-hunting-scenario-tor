@@ -1,16 +1,4 @@
-Absolutely — I added the screenshots into the sections where they fit best.
 
-Since GitHub README images should usually be stored in your repo, I’ll assume you place them in an `images` folder like this:
-
-- `images/tor-network-events-overview.png`
-- `images/tor-network-events-details.png`
-- `images/tor-browser-process-events-overview.png`
-- `images/tor-browser-process-details.png`
-- `images/tor-silent-install-details.png`
-
-Below is the full corrected GitHub-ready Markdown:
-
-```markdown
 # Threat-hunting-scenario-tor
 
 <img width="400" src="https://github.com/user-attachments/assets/44bac428-01bb-4fe9-9d85-96cba7698bee" alt="Tor Logo with the onion and a crosshair on it"/>
@@ -94,7 +82,7 @@ DeviceProcessEvents
 
 ### Evidence Screenshot
 
-<img src="images/tor-silent-install-details.png" alt="Silent TOR installer execution details in DeviceProcessEvents" width="700"/>
+<img src="https://github.com/user-attachments/assets/ea79f39f-5ab4-4fd2-a816-f99c5badb936" alt="Silent TOR installer execution details in DeviceProcessEvents" width="500"/>
 
 ---
 
@@ -125,10 +113,12 @@ DeviceProcessEvents
 ### Evidence Screenshots
 
 #### TOR Browser Process Activity Overview
-<img src="images/tor-browser-process-events-overview.png" alt="TOR browser process activity overview in DeviceProcessEvents" width="900"/>
+
+<img src="https://github.com/user-attachments/assets/2d61a8a4-2190-4aeb-8fbc-c7f6c4ef6bb6" alt="TOR browser process activity overview in DeviceProcessEvents" width="900"/>
 
 #### TOR Browser Process Detail
-<img src="images/tor-browser-process-details.png" alt="TOR browser firefox process detail showing path and execution context" width="500"/>
+
+<img src="https://github.com/user-attachments/assets/e224efaa-b8de-4b8b-9cd2-aab52bd70258" alt="TOR browser firefox process detail showing path and execution context" width="500"/>
 
 ---
 
@@ -161,10 +151,12 @@ DeviceNetworkEvents
 ### Evidence Screenshots
 
 #### TOR Network Connections Overview
-<img src="images/tor-network-events-overview.png" alt="TOR-related outbound network connections in DeviceNetworkEvents" width="900"/>
+
+<img src="https://github.com/user-attachments/assets/86fda2fa-5f2e-4d97-b5fc-27a951bfb42f" alt="TOR-related outbound network connections in DeviceNetworkEvents" width="900"/>
 
 #### TOR Network Connection Detail
-<img src="images/tor-network-events-details.png" alt="Detailed TOR network connection record showing remote IP 69.12.83.97 over port 9001" width="900"/>
+
+<img src="https://github.com/user-attachments/assets/cd12720d-21c5-4f4a-bfef-c489ec122e23" alt="Detailed TOR network connection record showing remote IP 69.12.83.97 over port 9001" width="900"/>
 
 ---
 
@@ -201,9 +193,7 @@ DeviceNetworkEvents
 - **Timestamp:** `2026-04-13T01:08:15Z`
 - Execution of:
 
-```text
-tor-browser-windows-x86_64-portable-15.0.9.exe /S
-```
+`tor-browser-windows-x86_64-portable-15.0.9.exe /S`
 
 **Outcome:**
 - Silent installation performed
@@ -224,12 +214,12 @@ tor-browser-windows-x86_64-portable-15.0.9.exe /S
 
 # Chronological Event Timeline (Summary View)
 
-| Time                 | Event                                           |
-|----------------------|-------------------------------------------------|
+| Time | Event |
+|------|-------|
 | 2026-04-12 21:14:05Z | TOR Browser launched (`firefox.exe`, `tor.exe`) |
-| 2026-04-12 21:15:06Z | TOR network connection established (port 9001)  |
-| 2026-04-13 01:08:15Z | Silent TOR installer executed (`/S`)            |
-| 2026-04-13 01:08:15Z | TOR files extracted to Desktop                  |
+| 2026-04-12 21:15:06Z | TOR network connection established (port 9001) |
+| 2026-04-13 01:08:15Z | Silent TOR installer executed (`/S`) |
+| 2026-04-13 01:08:15Z | TOR files extracted to Desktop |
 
 ---
 
@@ -245,27 +235,3 @@ The user **jameslee** on endpoint **win-client-01** demonstrated confirmed TOR a
 - Activity was escalated for review due to anonymization tool usage and silent installation behavior
 - Endpoint activity should be assessed for policy violation and potential unauthorized anonymized browsing
 ```
-
-## What you need to do
-Put your screenshots in a folder named `images` inside the repo, and rename them exactly as:
-
-- `tor-network-events-overview.png`
-- `tor-network-events-details.png`
-- `tor-browser-process-events-overview.png`
-- `tor-browser-process-details.png`
-- `tor-silent-install-details.png`
-
-## Suggested mapping from your uploaded screenshots
-Based on what you sent:
-
-1. first image → `tor-network-events-overview.png`
-2. second image → `tor-network-events-details.png`
-3. third image → `tor-browser-process-events-overview.png`
-4. fourth image → `tor-browser-process-details.png`
-5. fifth image → `tor-silent-install-details.png`
-
-If you want, I can do one more step and give you:
-- a **fully polished final README**
-- with **better wording**
-- **cleaner headings**
-- and **centered images** for GitHub presentation.
