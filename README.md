@@ -82,7 +82,7 @@ DeviceProcessEvents
 
 ### Evidence Screenshot
 
-<img src="https://github.com/user-attachments/assets/ea79f39f-5ab4-4fd2-a816-f99c5badb936" alt="Silent TOR installer execution details in DeviceProcessEvents" width="500"/>
+<img src="https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/images/tor-network-events-details.png" alt="Silent TOR installer execution details in DeviceProcessEvents" width="500"/>
 
 ---
 
@@ -114,11 +114,11 @@ DeviceProcessEvents
 
 #### TOR Browser Process Activity Overview
 
-<img src="https://github.com/user-attachments/assets/2d61a8a4-2190-4aeb-8fbc-c7f6c4ef6bb6" alt="TOR browser process activity overview in DeviceProcessEvents" width="900"/>
+<img src="https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/images/tor-browser-process-events-overview.png" alt="TOR browser process activity overview in DeviceProcessEvents" width="900"/>
 
 #### TOR Browser Process Detail
 
-<img src="https://github.com/user-attachments/assets/e224efaa-b8de-4b8b-9cd2-aab52bd70258" alt="TOR browser firefox process detail showing path and execution context" width="500"/>
+<img src="https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/images/tor-browser-process-details.png" alt="TOR browser firefox process detail showing path and execution context" width="500"/>
 
 ---
 
@@ -152,11 +152,11 @@ DeviceNetworkEvents
 
 #### TOR Network Connections Overview
 
-<img src="https://github.com/user-attachments/assets/86fda2fa-5f2e-4d97-b5fc-27a951bfb42f" alt="TOR-related outbound network connections in DeviceNetworkEvents" width="900"/>
+<img src="https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/images/tor-network-events-overview.png" alt="TOR-related outbound network connections in DeviceNetworkEvents" width="900"/>
 
 #### TOR Network Connection Detail
 
-<img src="https://github.com/user-attachments/assets/cd12720d-21c5-4f4a-bfef-c489ec122e23" alt="Detailed TOR network connection record showing remote IP 69.12.83.97 over port 9001" width="900"/>
+<img src="https://github.com/robertanaele/Threat-hunting-scenario-tor/blob/main/images/tor-network-events-details.png" alt="Detailed TOR network connection record showing remote IP 69.12.83.97 over port 9001" width="900"/>
 
 ---
 
