@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # Threat-hunting-scenario-tor
 
 <img width="400" src="https://github.com/user-attachments/assets/44bac428-01bb-4fe9-9d85-96cba7698bee" alt="Tor Logo with the onion and a crosshair on it"/>
@@ -44,6 +44,7 @@ Searched for any file containing the string **"tor"** under user activity for **
 - TOR-related installer execution initiated file creation and extraction activity.
 - Multiple TOR-related files were copied to the Desktop.
 - A file named **`tor-shipping-list.txt`** was created on:
+
 - **Timestamp:** `2026-04-13T01:08:15Z`
 
 ### Query Used:
@@ -56,7 +57,7 @@ DeviceFileEvents
 | where Timestamp >= datetime(2026-04-13T01:08:15Z)
 | project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
 | order by Timestamp desc
-```
+````
 
 ---
 
@@ -68,9 +69,11 @@ Searched for execution of:
 
 ### Findings:
 
-- User **jameslee** executed the TOR installer in **silent mode**
-- Installation occurred with no visible UI or prompts
-- **Timestamp:** `2026-04-13T01:08:15Z`
+* User **jameslee** executed the TOR installer in **silent mode**
+
+* Installation occurred with no visible UI or prompts
+
+* **Timestamp:** `2026-04-13T01:08:15Z`
 
 ### Query Used:
 
@@ -89,15 +92,18 @@ Searched for process execution indicating TOR Browser launch activity.
 
 ### Findings:
 
-- TOR Browser was actively launched on:
-- **Timestamp:** `2026-04-12T21:14:05Z`
-- Processes observed:
-  - `firefox.exe`
-  - `tor.exe`
+* TOR Browser was actively launched on:
+
+* **Timestamp:** `2026-04-12T21:14:05Z`
+
+* Processes observed:
+
+  * `firefox.exe`
+  * `tor.exe`
 
 ### Interpretation:
 
-- Confirms TOR Browser was **successfully executed prior to installation event**
+* Confirms TOR Browser was **successfully executed prior to installation event**
 
 ### Query Used:
 
@@ -117,15 +123,19 @@ Searched for outbound traffic associated with TOR-related processes.
 
 ### Findings:
 
-- **Timestamp:** `2026-04-12T21:15:06Z`
-- **Remote IP:** `69.12.83.97`
-- **Remote Port:** `9001`
-- **Process:** `tor.exe`
-- Additional encrypted traffic observed over port **443**
+* **Timestamp:** `2026-04-12T21:15:06Z`
+
+* **Remote IP:** `69.12.83.97`
+
+* **Remote Port:** `9001`
+
+* **Process:** `tor.exe`
+
+* Additional encrypted traffic observed over port **443**
 
 ### Interpretation:
 
-- Confirms active participation in TOR network relay communication
+* Confirms active participation in TOR network relay communication
 
 ### Query Used:
 
@@ -147,11 +157,12 @@ DeviceNetworkEvents
 
 ## 1. TOR Browser Execution
 
-- **Timestamp:** `2026-04-12T21:14:05Z`
-- User **jameslee** launched TOR Browser.
-- Processes spawned:
-  - `firefox.exe`
-  - `tor.exe`
+* **Timestamp:** `2026-04-12T21:14:05Z`
+* User **jameslee** launched TOR Browser.
+* Processes spawned:
+
+  * `firefox.exe`
+  * `tor.exe`
 
 **Outcome:** TOR Browser successfully started.
 
@@ -159,11 +170,14 @@ DeviceNetworkEvents
 
 ## 2. TOR Network Communication Established
 
-- **Timestamp:** `2026-04-12T21:15:06Z`
-- `tor.exe` established outbound connection:
-  - IP: `69.12.83.97`
-  - Port: `9001`
-- Additional encrypted HTTPS traffic observed (port 443)
+* **Timestamp:** `2026-04-12T21:15:06Z`
+
+* `tor.exe` established outbound connection:
+
+  * IP: `69.12.83.97`
+  * Port: `9001`
+
+* Additional encrypted HTTPS traffic observed (port 443)
 
 **Outcome:** Active TOR network participation confirmed.
 
@@ -171,26 +185,27 @@ DeviceNetworkEvents
 
 ## 3. Silent TOR Installation Executed
 
-- **Timestamp:** `2026-04-13T01:08:15Z`
-- Execution of:
+* **Timestamp:** `2026-04-13T01:08:15Z`
+* Execution of:
 
-  ```text
+  ```
   tor-browser-windows-x86_64-portable-15.0.9.exe /S
   ```
 
 **Outcome:**
 
-- Silent installation performed
-- No user interaction or UI prompts observed
+* Silent installation performed
+* No user interaction or UI prompts observed
 
 ---
 
 ## 4. TOR File Deployment on Desktop
 
-- **Timestamp:** `2026-04-13T01:08:15Z`
-- Multiple TOR-related files created/copied to Desktop
-- File created:
-  - `tor-shipping-list.txt`
+* **Timestamp:** `2026-04-13T01:08:15Z`
+* Multiple TOR-related files created/copied to Desktop
+* File created:
+
+  * `tor-shipping-list.txt`
 
 **Outcome:** Portable TOR bundle extracted and staged locally.
 
@@ -199,7 +214,7 @@ DeviceNetworkEvents
 # Chronological Event Timeline (Summary View)
 
 | Time                 | Event                                           |
-|----------------------|-------------------------------------------------|
+| -------------------- | ----------------------------------------------- |
 | 2026-04-12 21:14:05Z | TOR Browser launched (`firefox.exe`, `tor.exe`) |
 | 2026-04-12 21:15:06Z | TOR network connection established (port 9001)  |
 | 2026-04-13 01:08:15Z | Silent TOR installer executed (`/S`)            |
@@ -215,12 +230,9 @@ The user **jameslee** on endpoint **win-client-01** demonstrated confirmed TOR a
 
 # Response Taken
 
-- TOR usage was confirmed on endpoint **win-client-01**
-- Activity was escalated for review due to anonymization tool usage and silent installation behavior
-- Endpoint activity should be assessed for policy violation and potential unauthorized anonymized browsing
-```
+* TOR usage was confirmed on endpoint **win-client-01**
+* Activity was escalated for review due to anonymization tool usage and silent installation behavior
+* Endpoint activity should be assessed for policy violation and potential unauthorized anonymized browsing
 
-If you want, I can also:
-- clean up the formatting for a more professional GitHub README
-- add badges, table of contents, and sections
-- create a matching `threat-hunting-scenario-tor-event-creation.md` file in Markdown too
+```
+```
